@@ -1,0 +1,13 @@
+.row
+  / Blog Entries Column
+  .col-md-8
+    %div{class: "text-center category-search"}
+      = @posts.blank? ? "No posts matching the query:" : "Showing posts sorted by relevance for query"
+      %b
+        = params[:q]
+      \.
+      = link_to "Show all posts", root_path
+    = render 'mpp_mpp_blog/posts/shared/posts', :posts => @blog_posts, :pagination=>false
+  / Blog Sidebar Widgets Column
+  .col-md-4
+    = render 'mpp_mpp_blog/posts/shared/blog_sidebar'

@@ -1,0 +1,33 @@
+.row
+  / Blog Entries Column
+  .col-md-8
+    = link_to 'Back', blog_path, :class=>"back-link"
+    %h2.height-fix
+      = link_to @blog_post.title, @blog_post, :class=>"post-title"
+    %p
+      %span.glyphicon.glyphicon-time
+      Posted on 
+      = @blog_post.created_at.to_s(:time_in_words)
+    .social-share-icons
+      %a{:href => "https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=#{request.url}&pubid=ra-55115a8b3db5f5e3&ct=1&title=#{@blog_post.title}&pco=tbxnj-1.0", :target => "_blank"}
+        %img{:alt => "Facebook", :border => "0", :src => "https://cache.addthiscdn.com/icons/v2/thumbs/32x32/facebook.png"}/
+      %a{:href => "https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=#{request.url}&pubid=ra-55115a8b3db5f5e3&ct=1&title=#{@blog_post.title}&pco=tbxnj-1.0", :target => "_blank"}
+        %img{:alt => "Twitter", :border => "0", :src => "https://cache.addthiscdn.com/icons/v2/thumbs/32x32/twitter.png"}/
+      %a{:href => "https://api.addthis.com/oexchange/0.8/forward/google_plusone_share/offer?url=#{request.url}&pubid=ra-55115a8b3db5f5e3&ct=1&title=#{@blog_post.title}&pco=tbxnj-1.0", :target => "_blank"}
+        %img{:alt => "Google+", :border => "0", :src => "https://cache.addthiscdn.com/icons/v2/thumbs/32x32/google_plusone_share.png"}/
+      %a{:href => "https://api.addthis.com/oexchange/0.8/forward/linkedin/offer?url=#{request.url}&pubid=ra-55115a8b3db5f5e3&ct=1&title=#{@blog_post.title}&pco=tbxnj-1.0", :target => "_blank"}
+        %img{:alt => "LinkedIn", :border => "0", :src => "https://cache.addthiscdn.com/icons/v2/thumbs/32x32/linkedin.png"}/
+      %a{:href => "https://api.addthis.com/oexchange/0.8/forward/email/offer?url=#{request.url}&pubid=ra-55115a8b3db5f5e3&ct=1&title=#{@blog_post.title}&pco=tbxnj-1.0", :target => "_blank"}
+        %img{:alt => "Email", :border => "0", :src => "https://cache.addthiscdn.com/icons/v2/thumbs/32x32/email.png"}/
+    %hr
+      = link_to @blog_post do
+        %img.img-responsive{:alt => "", :class=>"post-image", :style=>"background-image: url(#{@blog_post.avatar.url})"}
+      %hr
+        %div.post-content
+          = nl2br(@blog_post.content).try(:html_safe)
+        %br
+        %h4
+          Discussion
+      .fb-comments{"data-colorscheme" => "light", "data-href" => "#{request.url}", "data-numposts" => "5", "data-width" => "100%"}
+  .col-md-4
+    = render 'mpp_blog/posts/shared/blog_sidebar'

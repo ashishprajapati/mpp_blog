@@ -1,0 +1,7 @@
+.row
+  / Blog Entries Column
+  .col-md-8
+    = render 'mpp_blog/posts/shared/posts', :blog_posts => @blog_posts, :pagination=>true
+  / Blog Sidebar Widgets Column
+  .col-md-4
+    = render 'mpp_blog/posts/shared/blog_sidebar'

@@ -1,0 +1,12 @@
+!!!
+%html
+  = render 'layouts/mpp_blog/blog_head'
+  %body{ class: 'navbar-padding'  }
+    = render 'shared/social_apis'
+    .wrap
+      = render 'shared/header'
+      .container
+        = render 'shared/flash_messages'
+        = yield    
+        = render 'mpp_blog/posts/shared/subscription_popup'
+    = render 'shared/footer'

@@ -1,0 +1,206 @@
+// Place all the styles related to the blog/posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-image{
+  background-size: cover;
+  height: 280px;
+  width: 100%;
+  background-position: center center;
+ }
+ .popular-post-image{
+  background-size: cover;
+  height: 160px;
+  width: 100%;
+  background-position: center center;
+ }
+ .post-title{
+  color:#666;
+  font-size:16px;
+ }
+ .post-title-sidebar{
+  color:#666;
+  font-size:14px;
+ }
+ .post-content{
+  	color:#666;
+  	font-size:14px;
+ }
+ .read_more_link{
+    color:#d34b7a;
+ }
+ .back-link{
+ 	font-size:14px;
+ }
+.new-post-title{
+    font-size: 16px;
+    color: #d34b7a;
+    line-height: 28px;
+    float:right;
+}
+.post-type{
+	height: 30px;
+}
+.post-setting{
+    font-size: 16px;
+	color:#d34b7a;
+}
+.post-setting span.glyphicon{font-size:10px;}
+.post-setting-ui{
+    padding: 13px 10px;
+	border-bottom: 1px solid #efefef;
+}
+.post-label-ui{
+    padding: 10px 10px;
+	border-bottom: 1px solid #efefef;
+	cursor:pointer;
+}
+.post-label-ui:hover{
+	background:#FFEDF3;
+}
+textarea.new-post-content{
+	height: 30em;
+	border-radius: 0px;
+}
+.new-post-section{
+    background: #fff;
+    padding: 20px;
+    border:1px #e7e7e7 solid;
+}
+.new-post-section-sidebar{
+    background: #fff;
+    border:1px #e7e7e7 solid;
+    margin-right: -31px;
+    border-top: 0px;
+}
+
+.post-setting-labels textarea{
+	width: 100%;
+	margin-top: 16px;
+}
+
+.post-setting-labels .post-file{
+	width: 100%;
+	margin-top: 16px;
+	overflow: auto;
+}
+.post-setting-labels{ display:none;}
+.btn-publish { 
+  color: #ffffff; 
+  background-color: #D34B7A; 
+  border-color: #C2426F; 
+} 
+.post-setting-nested{ background: #D6F2FF;}
+.result-text{
+	font-size: 12px;
+	color: #A1A1A1;
+	margin-left: 15px;
+}
+.show-categories-list{color:#BD3E6B; text-decoration:underline;font-style:italic;display:inline;}
+.add-tag-field{color:#BD3E6B; display:inline;}
+.status-draft{color:#BD3E6B;font-style:italic;display:inline;}
+.category-labels{
+  background: #7BCAE8;
+  color: #ffffff;
+  display: inline;
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 2px 5px 2px 4px;
+}
+.category-labels a{
+  color:#fff;
+}
+.category-labels:hover{
+  background: #53C3ED;
+}
+.category-search{font-size:14px;}
+.category-search a{ text-decoration:underline;}
+.table-responsive table.all-post-admin tr td{    padding: 15px;}
+.btn-publish:hover, 
+.btn-publish:focus, 
+.btn-publish:active, 
+.btn-publish.active, 
+.open .dropdown-toggle.btn-publish { 
+  color: #ffffff; 
+  background-color: #BD3E6B; 
+  border-color: #C2426F; 
+} 
+.popular-post-margin{
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+#sortable tr.ui-sortable-helper{background: #fff;}
+#sortable tr td{cursor:pointer;}
+#sortable tr.ui-sortable-helper td{cursor:move;}
+.list-post-setting{   font-size: 14px;  color:#666;}
+.list-post-setting-nested .sidebar-post-header{font-size: 14px; margin-left:30px;color:#666;margin-top:5px;}
+.post-link-active .sidebar-post-header{  color:#d34b7a;}
+.post-link-active .gl-font{  color:#d34b7a;}
+.sidebar-post-header{ margin-left:10px; }
+.gl-font{ font-size:16px; }
+table.table{font-size:14px;}
+a.post-title-admin{color: #15c;}
+.crud-operations{margin-top:5px;}
+input.form-control.search-field{ height:34px;}
+.blog-sidebar-widgets{     
+  background: none repeat scroll 0 0 whitesmoke;
+  border: 1px solid #e3e3e3;
+  padding: 10px;
+}
+.sidebar-widget{}
+h2.height-fix{line-height:10px;}
+.fb-comments, .fb-comments iframe[style], .fb-comments span {
+   width: 100% !important;
+}
+.social-share-icons img{width:22px;}
+.btn-publish:active, 
+.btn-publish.active, 
+.open .dropdown-toggle.btn-publish { 
+  background-image: none; 
+} 
+.subscription-box{
+  padding:10px;
+  background: #cce8f3;
+  color: #666;
+  font-size:16px;
+}
+.subscription-box-popup{  
+  padding:10px;
+  background: #cce8f3;
+  color: #666;
+  font-size:16px;
+  border: 4px solid #333333;
+}
+.subscription-box-popup{text-align:center;}
+.subscription-box-popup .subscription-box-body{font-size:14px;margin:5% 0 4% 0}
+.subscription-box-footer{ margin-top:12%; font-size:12px; cursor:pointer;}
+.btn-publish.disabled, 
+.btn-publish[disabled], 
+fieldset[disabled] .btn-publish, 
+.btn-publish.disabled:hover, 
+.btn-publish[disabled]:hover, 
+fieldset[disabled] .btn-publish:hover, 
+.btn-publish.disabled:focus, 
+.btn-publish[disabled]:focus, 
+fieldset[disabled] .btn-publish:focus, 
+.btn-publish.disabled:active, 
+.btn-publish[disabled]:active, 
+fieldset[disabled] .btn-publish:active, 
+.btn-publish.disabled.active, 
+.btn-publish[disabled].active, 
+fieldset[disabled] .btn-publish.active { 
+  background-color: #D34B7A; 
+  border-color: #C2426F; 
+} 
+ 
+.btn-publish .badge { 
+  color: #D34B7A; 
+  background-color: #ffffff; 
+}
+.social-buttons{
+  display: inline;
+  float: left;
+  margin-right:5px;
+}
+.fb-like.fb_iframe_widget{top: -2px;}

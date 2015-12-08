@@ -1,0 +1,58 @@
+= simple_form_for(@blog_post) do |f|
+  .row
+    = f.error_notification
+    .row.new-post-section
+      .col-md-12
+        .col-md-1
+          %label{:class=>"new-post-title"} Post
+        .col-md-8
+          = f.text_field :title, :placeholder=>"Post title", :class=> "optional form-control"
+        .col-md-1
+          = button_tag botton_check(f.object.status, "Publish","Update"), :name=>"blog_post[status]", :value=>true, class:"btn btn-publish"
+        .col-md-2
+          = button_tag botton_check(f.object.status, "Save","Revert to draft"), :name=>"blog_post[status]", :value=>false,class:"btn btn-default"
+    .row
+      .col-md-12
+        .col-md-8
+          %hr/
+          = f.text_area :content, :class=> "new-post-content optional form-control"
+        .col-md-4
+          .new-post-section-sidebar
+            %div.post-setting-ui
+              %a{href: "#", class: "post-setting","data-toggle"=>"post-setting"}              
+                %span{class:"glyphicon glyphicon-chevron-down"}
+                Post settings
+            .post-setting-contents              
+              - if MppBlog::Post.popular_limit || f.object.popular
+                %div.post-label-ui
+                  %span.button-checkbox.btn-margin-fix
+                    %button.btn{"data-color" => "success", :type => "button"} Mark As Popular Post
+                    = f.check_box :popular, :class=>"hidden"
+              %div.post-label-ui
+                %div.post-label-event
+                  %span{class:"glyphicon glyphicon-picture"}
+                  Picture
+                  %div.result-picture
+                    %img.img-responsive{src: f.object.avatar}
+                %div.post-setting-labels
+                  %div.post-file
+                    = f.file_field :avatar
+              %div.post-label-ui
+                %div.post-label-event
+                  %span{class:"glyphicon glyphicon-tag"}
+                  Categories
+                  %div.result-text
+                    = arrange_tags(f.object.category_list)
+                %div.post-setting-labels
+                  = text_area_tag "blog_post[category_list][]", arrange_tags(f.object.category_list), :class=>"category-list", "data-categories"=>MppBlog::Post.category_counts.map(&:name).join(",")
+                  Separate categories with commas
+                  %div
+                    = add_tags(MppBlog::Post.category_counts.map(&:name))
+              %div.post-label-ui
+                %div.post-label-event 
+                  %span{class:"glyphicon glyphicon-search"}
+                  Search Description
+                  %div.result-text
+                    = f.object.search_description
+                %div.post-setting-labels
+                  = f.text_area :search_description

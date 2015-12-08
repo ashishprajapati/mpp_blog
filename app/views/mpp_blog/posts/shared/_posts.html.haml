@@ -1,0 +1,21 @@
+- blog_posts.each do |blog_post|
+  %h2.height-fix
+    = link_to blog_post.title, blog_post, :class=>"post-title"
+  %p
+    %span.glyphicon.glyphicon-time
+    Posted on 
+    = blog_post.created_at.to_s(:time_in_words)
+  %hr
+    = link_to blog_post do
+      %img.img-responsive{:alt => "", :class=>"post-image", :style=>"background-image: url(#{blog_post.avatar.url})"}
+    %hr
+      %div.post-content
+        = truncate( nl2space(blog_post.content), length: 300, omission: " "){link_to '[Read More]', blog_post, :class=>'read_more_link'}
+      %hr
+/ Pager
+-if pagination
+  %ul.pager
+    %li.previous
+      = link_to_previous_page blog_posts, prev_btn
+    %li.next
+      = link_to_next_page blog_posts, next_btn

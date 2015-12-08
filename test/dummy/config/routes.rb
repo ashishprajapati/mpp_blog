@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount MppBlog::Engine => "/mpp_blog"
+  mount MppBlog::Engine => "/blog"
 end

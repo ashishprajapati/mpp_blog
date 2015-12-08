@@ -1,0 +1,19 @@
+= link_to "New Post", new_post_path, :class=>"btn btn-publish"
+%br
+%br
+%div
+  %a{href: "#", class: "list-post-setting #{"post-link-active" if params[:action]!="popular" }"} 
+    %span{class:"glyphicon glyphicon-list-alt gl-font"}
+    %span{class:"sidebar-post-header"} Posts
+  %a{href: "#{all_posts_path}", class: "list-post-setting-nested #{"post-link-active" if params[:action]=="all"}"} 
+    %div{class:"sidebar-post-header"} All (#{ @posts_count[:all]})
+  %a{href: "#{draft_posts_path}", class: "list-post-setting-nested #{"post-link-active" if params[:action]=="draft"}"} 
+    %div{class:"sidebar-post-header"} Draft (#{ @posts_count[:draft]})
+  %a{href: "#{published_posts_path}", class: "list-post-setting-nested #{"post-link-active" if params[:action]=="published"}"} 
+    %div{class:"sidebar-post-header"} Published (#{ @posts_count[:published]})
+%br
+%br
+%div
+  %a{href: "#{popular_posts_path}", class: "list-post-setting #{"post-link-active" if params[:action]=="popular"}"} 
+    %span{class:"glyphicon glyphicon-list-alt gl-font"}
+    %span{class:"sidebar-post-header"} Popular Posts

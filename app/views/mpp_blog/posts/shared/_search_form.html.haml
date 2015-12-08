@@ -1,0 +1,6 @@
+= form_tag search_index_path, :method=>"get" do
+  .input-group
+    %input.form-control{:type => "text", :placeholder => "Search", :name=>"q", :class=>"search-field"}
+      %span.input-group-btn
+        %button.btn.btn-default{:type => "submit"}
+          %span.glyphicon.glyphicon-search

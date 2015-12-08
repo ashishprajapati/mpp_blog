@@ -13,3 +13,16 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'font-awesome-rails'
+gem 'haml-rails'
+gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass-rails'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'mini_magick'
+gem 'open_uri_redirections'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'truncate_html'
+gem 'carrierwave'
+gem 'kaminari'
+gem 'pry'

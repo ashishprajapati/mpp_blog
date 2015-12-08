@@ -1,0 +1,45 @@
+.blog-sidebar-widgets
+  .sidebar-widget
+    .subscription-box
+      Wants more tips & tricks for your car, or exclusive discounts and promotions?
+      %p
+      FOLLOW US
+      %br
+      .social-buttons
+        .fb-like{"data-action" => "like", "data-href" => "https://www.facebook.com/mechanio", "data-layout" => "button", "data-show-faces" => "false"}
+      .social-buttons  
+        %a.twitter-follow-button{"data-show-count" => "false", "data-show-screen-name" => "false", :href => "https://twitter.com/MechanioAU"} Follow @MechanioAU
+      .social-buttons
+        .g-follow{"data-annotation" => "none", "data-height" => "20", "data-href" => "https://plus.google.com/111000270504322559790", "data-rel" => "publisher"}
+      .social-buttons
+        %img{:src=>"/assets/youtube_s.png", :style=>"margin-bottom: 10px;height: 20px;"}
+      %br
+      %p
+      SUBSCRIBE
+      = form_tag subscription_posts_path, :method=>"get" do
+        .input-group
+          %input.form-control{:type => "email", :placeholder => "Enter Email Address", :name=>"subscription[email]", :class=>"search-field", :required=>true}
+          %input.form-control{:type => "hidden", :name=>"subscription[ip_address]", :value=>"#{request.remote_ip}"}
+            %span.input-group-btn
+              %button.btn.btn-dark{:type => "submit"}
+                SUBSCRIPE
+  %hr
+  .sidebar-widget
+    = render 'mpp_blog/posts/shared/search_form'
+  %hr
+  .sidebar-widget
+    %h4 POPULAR
+    .row
+      .col-lg-12
+        - popular_posts.each do |blog_post|
+          = link_to blog_post do
+            %img.img-responsive{:alt => "", :class=>"popular-post-image", :style=>"background-image: url(#{blog_post.avatar.url})"}
+          %div.popular-post-margin
+            = link_to blog_post.title, blog_post, :class=>"post-title-sidebar"
+  %hr
+  .sidebar-widget
+    %h4 CATEGORIES
+    .row
+      .col-lg-12
+        %ul.list-unstyled
+          = add_tags_front_end(MppBlog::Post.category_counts.map(&:name))
