@@ -13,7 +13,18 @@ Gem::Specification.new do |s|
   s.summary     = "TODO: Summary of MppBlog."
   s.description = "TODO: Description of MppBlog."
   s.license     = "MIT"
-
+  s.add_dependency 'font-awesome-rails'
+  s.add_dependency 'haml-rails'
+  s.add_dependency 'sass-rails', '~> 4.0.0'
+  s.add_dependency 'bootstrap-sass-rails'
+  s.add_dependency 'coffee-rails', '~> 4.0.0'
+  s.add_dependency 'jquery-rails'
+  s.add_dependency 'mini_magick'
+  s.add_dependency 'open_uri_redirections'
+  s.add_dependency 'acts-as-taggable-on', '~> 3.4'
+  s.add_dependency 'truncate_html'
+  s.add_dependency 'carrierwave'
+  s.add_dependency 'kaminari'
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 end
